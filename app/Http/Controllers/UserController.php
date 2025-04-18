@@ -23,7 +23,7 @@ class UserController extends Controller
 
     public function store(Request $request){
         $request->validate([
-            'first_name'=>'required|string|max:100',
+            'first_name'=>'required|string|max:100',//key,
             'last_name'=>'required|string|max:100',
             'email'=> ['required','email',Rule::unique('users')->whereNull('deleted_at')],
             'password'=>'required|confirmed|min:8',
@@ -42,6 +42,7 @@ class UserController extends Controller
     public function destroy($id){
         $user = User::findOrFail($id);
         $user ->delete();
+        
         return redirect()->route('users.index')->with('success','User has been deleted successfully!!');
     }
     public function show($id)
