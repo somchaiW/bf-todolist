@@ -5,6 +5,7 @@ use App\HTTP\Controllers\CompanyCRUDController;
 use App\Http\Controllers\UserController;
 
 
+
 Route::resource('companies',CompanyCRUDController::class);
 
 Route::get('/home', function(){
@@ -21,6 +22,9 @@ Route::delete('/admin/users/{id}',[UserController::class,'destroy'])->name('user
 
 Route::get('/admin/users/{id}/edit',[UserController::class,'edit'])->name('users.edit');
 Route::put('/admin/users/{id}',[UserController::class,'update'])->name('users.update');
+
+
+
 /*  
 |--------------------------------------------------------------------------
 | Web Routes

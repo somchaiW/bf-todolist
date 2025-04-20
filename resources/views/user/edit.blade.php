@@ -13,25 +13,25 @@
             @csrf
             @method('PUT')
 
-            <!-- First Name -->
+            
             <div class="form-group">
                 <label>First Name</label>
                 <input type="text" name="first_name" class="form-control" value="{{ old('first_name', $user->first_name) }}" required>
             </div>
 
-            <!-- Last Name -->
+            
             <div class="form-group">
                 <label>Last Name</label>
                 <input type="text" name="last_name" class="form-control" value="{{ old('last_name', $user->last_name) }}" required>
             </div>
 
-            <!-- Email -->
+            
             <div class="form-group">
                 <label>Email</label>
                 <input type="email" name="email" class="form-control" value="{{ old('email', $user->email) }}" required>
             </div>
 
-            <!-- Avatar Upload -->
+           
             <div class="form-group">
                 <label for="avatar">Upload Avatar</label>
                 <input type="file" name="avatar" class="form-control">
@@ -40,7 +40,7 @@
                 @endif
             </div>
 
-            <!-- Submit Buttons -->
+           
             <button type="submit" class="btn btn-success">Update</button>
             <a href="{{ route('users.index') }}" class="btn btn-secondary">Cancel</a>
         </form>
