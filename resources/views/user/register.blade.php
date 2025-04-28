@@ -5,7 +5,7 @@
 @section('content_header')
     <h1>Register</h1>
 @endsection
-
+ 
 @section('content')
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
