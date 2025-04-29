@@ -4,13 +4,26 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Task;
 
 class TaskController extends Controller
 {
 
     public function add_task(Request $request)
     {
+        // $date = \Carbon\Carbon::createFromFormat('d/m/Y', $request->date)->format('Y-m-d');
+        // $time = str_replace('.', ':', $request->time) . ':00'; 
         
+        // $task = Task::create
+        // ([
+        //     'name' => $request->name,
+        //     'description' => $request->description,
+        //     'date' => $date,
+        //     'time' => $time,
+        //     'priority' => $request->priority,
+        //     'category' => $request->category,
+        //     'status' => false, 
+        // ]);
         $task = [
             'id' => 1,
             'name' => $request->name,
@@ -135,38 +148,40 @@ class TaskController extends Controller
 
     public function get_list_task()
     {
-        $tasks = [
-            [
-                'id' => 1,
-                'name' => 'Buy groceries',
-                'description' => 'Milk, Bread, Eggs',
-                'date' => '2025-04-23',
-                'time' => ['hour' => '10', 'minute' => '30'],
-                'priority' => 2,
-                'category' => 'Work',
-                'status' => false
-            ],
-            [
-                'id' => 2,
-                'name' => 'Team Meeting',
-                'description' => 'Project kickoff meeting with the dev team.',
-                'date' => '2025-04-24',
-                'time' => ['hour' => '14', 'minute' => '00'],
-                'priority' => 1,
-                'category' => 'None',
-                'status' => true
-            ],
-            [
-                'id' => 3,
-                'name' => 'Workout',
-                'description' => 'Leg day at the gym.',
-                'date' => '2025-04-22',
-                'time' => ['hour' => '18', 'minute' => '00'],
-                'priority' => 3,
-                'category' => 'Health',
-                'status' => false
-            ],
-        ];
+    //    $tasks = Task::all();
+        
+    $tasks = [
+        [
+            'id' => 1,
+            'name' => 'Buy groceries',
+            'description' => 'Milk, Bread, Eggs',
+            'date' => '2025-04-23',
+            'time' => ['hour' => '10', 'minute' => '30'],
+            'priority' => 2,
+            'category' => 'Work',
+            'status' => false
+        ],
+        [
+            'id' => 2,
+            'name' => 'Team Meeting',
+            'description' => 'Project kickoff meeting with the dev team.',
+            'date' => '2025-04-24',
+            'time' => ['hour' => '14', 'minute' => '00'],
+            'priority' => 1,
+            'category' => 'None',
+            'status' => true
+        ],
+        [
+            'id' => 3,
+            'name' => 'Workout',
+            'description' => 'Leg day at the gym.',
+            'date' => '2025-04-22',
+            'time' => ['hour' => '18', 'minute' => '00'],
+            'priority' => 3,
+            'category' => 'Health',
+            'status' => false
+        ],
+    ];
 
         return response()->json([
             'status' => 'success',
@@ -217,43 +232,6 @@ class TaskController extends Controller
             ]
         ], 200);
     }
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+    
+    
 }

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->date('date');
-            $table->time('time');
+            $table->json('time');
             $table->integer('priority')->default(3);
             $table->string('category')->default('None');
             $table->boolean('status')->default(false);
